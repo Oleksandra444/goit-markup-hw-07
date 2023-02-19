@@ -57,25 +57,36 @@
             </li>
           </ul>
         </address>
+
+        <!-- -----Mobile button----- -->
+        <button
+          class="menu-toggle js-open-menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <svg class="icon-menu-hamburger" width="32" height="22">
+            <use href="./images/symbol-defs.svg#icon-menu-hamburger"></use>
+          </svg>
+        </button>
       </div>
     </header>
 
     <main>
       <!-- -----Hero----- -->
-      <section class="hero">
+      <!-- <section class="hero">
         <h1 class="hero-title">Effective Solutions for Your Business</h1>
         <button class="btn-order" data-modal-open type="button">
           Order Service
         </button>
-      </section>
+      </section> -->
 
       <!-- -----Our benefits----- -->
       <section class="benefits">
         <div class="container benefits">
           <h2 class="section-title" hidden>Our benefits</h2>
 
-          <ul class="description-benefits list">
-            <li class="description-benefits-item">
+          <ul class="description-benefits list card-set">
+            <li class="description-benefits-item card-set-item">
               <div class="description-benefits-icon">
                 <svg class="icon-benefits antenna" width="64" height="64">
                   <use href="./images/symbol-defs.svg#icon-antenna"></use>
@@ -88,7 +99,7 @@
               </p>
             </li>
 
-            <li class="description-benefits-item">
+            <li class="description-benefits-item card-set-item">
               <div class="description-benefits-icon">
                 <svg class="icon-benefits clock" width="64" height="64">
                   <use href="./images/symbol-defs.svg#icon-clock"></use>
@@ -101,7 +112,7 @@
               </p>
             </li>
 
-            <li class="description-benefits-item">
+            <li class="description-benefits-item card-set-item">
               <div class="description-benefits-icon">
                 <svg class="icon-benefits diagram" width="64" height="64">
                   <use href="./images/symbol-defs.svg#icon-diagram"></use>
@@ -114,7 +125,7 @@
               </p>
             </li>
 
-            <li class="description-benefits-item">
+            <li class="description-benefits-item card-set-item">
               <div class="description-benefits-icon">
                 <svg class="icon-benefits astronaut" width="64" height="64">
                   <use href="./images/symbol-defs.svg#icon-astronaut"></use>
@@ -131,7 +142,7 @@
       </section>
 
       <!-- -----What are we doing images----- -->
-      <section class="work">
+      <!-- <section class="work">
         <div class="container">
           <h2 class="section-title">What are we doing</h2>
 
@@ -162,10 +173,10 @@
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
 
       <!-- -----Our team----- -->
-      <section class="team">
+      <!-- <section class="team">
         <div class="container">
           <h2 class="section-title">Our team</h2>
 
@@ -335,10 +346,10 @@
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
 
       <!-- -----Customers----- -->
-      <section class="customers">
+      <!-- <section class="customers">
         <div class="container">
           <h2 class="section-title">Customers</h2>
           <ul class="customers-list list">
@@ -386,11 +397,11 @@
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
     </main>
 
     <!-- -----Footer----- -->
-    <footer class="footer">
+    <!-- <footer class="footer">
       <div class="container">
         <div class="footer-description">
           <a class="logo link" href="./index.html"
@@ -456,10 +467,10 @@
           </div>
         </form>
       </div>
-    </footer>
+    </footer> -->
 
     <!-- -----Modal window----- -->
-    <div class="backdrop is-hidden" data-modal>
+    <!-- <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="modal-button" data-modal-close type="button">
           <svg class="icon-close">
@@ -535,6 +546,74 @@
         </form>
       </div>
     </div>
-    <script src="./modal.js"></script>
+
+ -->
+
+    <!-- -----Mobile menu----- -->
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="menu-toggle js-close-menu">
+        <svg class="icon-close">
+          <use href="./images/symbol-defs.svg#icon-close-button"></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu list">
+        <li class="mobile-menu-item"><a class="link studio" href>Studio</a></li>
+        <li class="mobile-menu-item"><a class="link" href>Portfolio</a></li>
+        <li class="mobile-menu-item"><a class="link" href>Contacts</a></li>
+      </ul>
+      <ul class="mobile-menu adress list">
+        <li class="mobile-menu-adress-item">
+          <a class="link burger-phone" href="tel:+110001111111"
+            >+11 (000) 111-11-11</a
+          >
+        </li>
+        <li class="mobile-menu-adress-item">
+          <a class="link burger-email" href="mailto:info@devstudio.com"
+            >info@devstudio.com</a
+          >
+        </li>
+      </ul>
+      <ul class="mobile-menu social list">
+        <li class="social-list">
+          <a class="social-list-link" href>
+            <svg class="social-list-icon">
+              <use href="./images/symbol-defs.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-list">
+          <a class="social-list-link" href>
+            <svg class="social-list-icon">
+              <use href="./images/symbol-defs.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-list">
+          <a class="social-list-link" href>
+            <svg class="social-list-icon">
+              <use href="./images/symbol-defs.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-list">
+          <a class="social-list-link" href>
+            <svg class="social-list-icon">
+              <use href="./images/symbol-defs.svg#icon-linkedin"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      defer
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/mobile-menu.js" defer></script>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>

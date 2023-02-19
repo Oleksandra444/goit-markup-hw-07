@@ -1,3 +1,8 @@
+/* Breackpoints
+--phone-screen: 480px
+--tablet-screen: 768px
+--desktop-screen: 1200px */
+
 :root {
     --logo-btn-color: #4D5AE5;
     --white-color: #FFFFFF;
@@ -14,6 +19,13 @@
 
    
 }
+
+:root {
+
+--indent:30px;
+--items:4;
+}
+
 .visually-hidden {
   position: absolute;
   overflow: hidden;
@@ -38,32 +50,92 @@ body {
 
 .list {
     margin: 0;
-    
     padding: 0;
     list-style: none;}
 
 .link {text-decoration: none;}
 
-.container {
-    width: 1158px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
-    /* outline: 2px solid tomato; */
+.card-set {
+    display: flex;
+    flex-wrap: wrap;
+    gap:var(--indent)
 }
 
-section {padding: 120px 0;}
+.card-set-item {
+    flex-basis: calc((100% - (var(--indent) * (var(--items) - 1))) / var(--items))
+}
 
+image {display: block;
+max-width: 100%;
+height: auto;}
+
+/* ТЕЛЕФОН Описали контейнер +дефолт*/
+.container {
+    /* 280px=<phone-screen<=infinity */
+    min-width: 280px;
+    max-width: 428px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 16px;
+    padding-left: 16px;
+    outline: 2px solid tomato;}
+
+/* ПЛАНШЕТ Описали контейнер */
+
+    /* 768px=<tablet-screen<=infinity */
+    @media screen and (min-width: 768px) {
+    .container {
+        max-width: 736px;
+        padding-right: 16px;
+        padding-left: 16px;}
+    }
+
+/* ДЕСКТОП Описали контейнер */
+
+    /* 1200px=<desktop-screen<=infinity */
+    @media screen and (min-width: 1200px) {
+    .container {max-width: 1158px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    }
+    
+/* ТЕЛЕФОН описали секцію */
+section {
+    /* 280px=<phone-screen<=infinity */
+    padding: 78px 0;}
+
+/* ПЛАНШЕТ Описали секцію*/
+    /* 768px=<tablet-screen<=infinity */
+    @media screen and (min-width: 768px) {
+    section {padding: 96px 0;}
+    }
+
+/* ДЕСКТОП Описали секцію */
+    /* 1200px=<desktop-screen<=infinity */
+    @media screen and (min-width: 1200px) {
+    section {padding: 120px 0;
+    }
+    }
 
 /* -----HEADER----- */
-
+/* ALL Описали лінію під хедером*/
 header {
     border-bottom: 1px solid var(--third-text-color);
 }
 
+/* ALL Описали контейнер хедеру, додали властивість флекс*/
+.container.page-header {
+    display: flex;
+    align-items: center;
+}
+
 /* -----Logo----- */
-.logo {
+
+/* ALL Описали ЛОГОТИП шрифти*/
+
+    .logo {
+    padding: 24px 0;
     
     color: var(--logo-btn-color);
     font-weight: 800;
@@ -74,12 +146,47 @@ header {
     text-transform: uppercase;
 }
 
+/* ALL Описали ЛОГОТИП - біла частина */
 .accent {color: var(--second-text-color);}
 
 /* -----Navigation------ */
+/* ALL описали позиціонування (блок меню + лого)  */
+.page-nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto;}
 
+/* ТЕЛЕФОН приховали блок меню та адрес  */
+    @media screen and (max-width: 768px) {
+    .menu {display: none;}
+    }
+
+    /* .menu {display: none;}
+    .address {display: none;} */
+
+    @media screen and (max-width: 768px) {
+    .address {display: none;}}
+
+
+/* ПЛАНШЕТ описали блок меню, марджином відсунули від лого  */
+     @media screen and (min-width: 768px) {
+    .menu {
+    display: flex;
+    align-items: center;
+    margin-left: 120px;
+    }
+}
+/* ДЕСКТОП описали блок меню, марджином відсунули від лого  */
+     @media screen and (min-width: 1200px) {
+    .menu {
+    display: flex;
+    align-items: center;
+    margin-left: 76px;
+    }
+}
+
+/* ALL описали лінки в меню, центрували паддінгами, встановили ховер та підкреслення за допомогою афтер, встановили між лінками меню марджини по 40  */
 .menu-link {
-    
     display: block;
     padding-top: 24px;
     padding-bottom: 24px;
@@ -104,55 +211,200 @@ bottom: -1px;
 display: block;
 width: 100%;
 height: 4px;
-/* margin-top: -4px; */
 border-radius: 2px;
 background-color: var(--change-color);
-}
-
-
-/* -----Adress----- */
-
-.contact-link {
-    
-    color: var(--main-text-color);
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
-
-
-.contact-link:hover, 
-.contact-link:focus {color: var(--change-color); }
-
-
-.container.page-header {
-    display: flex;
-    align-items: center;
-}
-
-.menu {
-    display: flex;
-    align-items: center;
-    margin-left: 76px;
 }
 
 .menu-item:not(:last-child) {
     margin-right: 40px;
 }
 
-.page-nav {
-    display: flex;
-    align-items: center;
-    margin-right: auto;}
+/* -----Adress----- */
+/* ПЛАНШЕТ описали адрес лінк шрифти  */
+    @media screen and (min-width: 768px) {
+    .contact-link {
+    color: var(--main-text-color);
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+}
 
+/* ДЕСКТОП описали адрес лінк шрифти  */
+    @media screen and (min-width: 1200px) {
+    .contact-link {
+ 
+    color: var(--main-text-color);
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+}
+
+.contact-link:hover, 
+.contact-link:focus {color: var(--change-color); }
+
+
+/* ALL описали адрес позиціонування. дисплей флекс  */
 .page-nav-adress {
     display: flex;
     align-items: center;}
+
+/* ПЛАНШЕТ описали адрес позиціонування  */
+    @media screen and (min-width: 768px) {
+    .page-nav-adress {
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 24px;
+    margin-bottom: 10px;}
+}
+
+/* ДЕСКТОП описали адрес позиціонування  */
+    @media screen and (min-width: 1200px) {
+    .page-nav-adress {
+    gap: 40px;
+    }
+}
+
+/* ТЕЛЕФОН Бургер-меню  */
+
+/* ТЕЛЕФОН кнопка бургер  */
+
+ @media screen and (min-width: 768px) {
+    .menu-toggle {display:none}
+
+}
+
+@media screen and (max-width: 767px) {
+  
+.menu-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 32px;
+  min-height: 22px;
     
-.page-nav-adress-item:not(:last-child) {margin-right: 40px;}
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+}
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.icon-menu-hamburger {stroke: var(--backgroundcolor);}
+
+/* ТЕЛЕФОН меню бургер КОНТЕЙНЕР */
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  /* min-height: 100%; */
+  padding: 80px 15px 15px 40px;
+  background-color: var(--white-color);
+  transition: transform 250ms ease-in-out;
+
+  transform: translateX(100%);
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+ /* ТЕЛЕФОН меню бургер КНОПКА ЗАКРИТТЯ */
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%; 
+  background-color: var(--third-text-color);
+  color: #fff;
+  cursor: pointer;
+  
+}
 
 
+/* ТЕЛЕФОН меню бургер МЕНЮ описали кнопки меню */
 
+.mobile-menu {
+  margin: 0;
+  padding: 0;
+  
+}
+/* ТЕЛЕФОН меню бургер відступ між телефоном і меню */
+.mobile-menu:nth-child(2) {margin-bottom: auto;}
+
+.mobile-menu .link {
+  display: block;
+  color: var(--backgroundcolor);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+/* ТЕЛЕФОН меню бургер відступ між елементами МЕНЮ*/
+.mobile-menu-item:not(:last-child) {margin-bottom: 40px;}
+
+.link.studio {color:var(--logo-btn-color)}
+
+/* ТЕЛЕФОН меню бургер відступ між ТЕЛЕФОН і ПОШТА*/
+
+.mobile-menu-adress-item:not(:last-child) {margin-bottom: 40px;}
+
+/* ТЕЛЕФОН меню бургер  ТЕЛЕФОН*/
+.mobile-menu.adress .burger-phone{
+    display: block;
+    color: var(--logo-btn-color);
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.11;
+}
+
+/* ТЕЛЕФОН меню бургер  ПОШТА*/
+.mobile-menu.adress .burger-email{
+    display: block;
+    color: var(--main-text-color);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+}
+
+.mobile-menu.adress {margin-bottom: 40px
+    ;}
+
+.mobile-menu.social {padding-bottom: 40px;}
+
+/* ТЕЛЕФОН меню бургер  МЕСЕНДЖЕРИ*/
+.mobile-menu.social {display: flex;
+gap: 24px;
+align-items: center;}
+
+   
 /* -----Hero----- */
 
 .hero {
@@ -247,9 +499,35 @@ background-color: var(--change-color);
 
 /* -----Benefits------     */
 
-.description-benefits-icon {
+.description-benefits {
     display: flex;
-  
+}
+
+/*   ТЕЛЕФОН ПЕРЕВАГИ      */
+/* @media screen and (max-width: 280px) and (min-width: 480px)  {
+    .description-benefits-icon {display:none}} */
+
+.description-benefits-icon {display:none}
+
+@media screen and (max-width: 767px) {
+    .description-benefits {--indent:0px;
+--items:1;}
+    .description-benefits .section-subtitle  {text-align: center;}
+}
+@media screen and (max-width: 767px)
+{.description-benefits-item:not(:last-child) {margin-bottom: 72px;}}
+
+/*   ПЛАНШЕТ ПЕРЕВАГИ      */
+@media screen and (min-width: 768px) {
+    .description-benefits-icon {display:none}
+    .description-benefits {--indent:24px;
+--items:2;}
+    
+}
+/*   ДЕСКТОП ПЕРЕВАГИ      */
+@media screen and (min-width: 1200px) {
+    .description-benefits-icon {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 264px;
@@ -262,18 +540,27 @@ background-color: var(--change-color);
 
     background-repeat: no-repeat;
 }
+    .description-benefits {--indent:24px;
+--items:4;}
 
-.description-benefits {
-    display: flex;
+    .description-benefits-item {margin-bottom: 72px;}
+    
 }
 
-.description-benefits-item {
+
+
+
+
+
+
+
+/* .description-benefits-item {
     width: 264px;
-}
+} */
 
-.description-benefits-item+.description-benefits-item {
+/* .description-benefits-item+.description-benefits-item {
     margin-left: 24px;
-}
+} */
 
 
 /* -----What are we doing images------     */
