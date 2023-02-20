@@ -65,11 +65,11 @@ body {
     flex-basis: calc((100% - (var(--indent) * (var(--items) - 1))) / var(--items))
 }
 
-image {display: block;
+img {display: block;
 max-width: 100%;
 height: auto;}
 
-/* ТЕЛЕФОН Описали контейнер +дефолт*/
+
 .container {
     /* 280px=<phone-screen<=infinity */
     min-width: 280px;
@@ -78,19 +78,19 @@ height: auto;}
     margin-left: auto;
     padding-right: 16px;
     padding-left: 16px;
-    outline: 2px solid tomato;}
+    /* outline: 2px solid tomato; */}
 
-/* ПЛАНШЕТ Описали контейнер */
+
 
     /* 768px=<tablet-screen<=infinity */
     @media screen and (min-width: 768px) {
     .container {
-        max-width: 736px;
+        max-width: 768px;
         padding-right: 16px;
         padding-left: 16px;}
     }
 
-/* ДЕСКТОП Описали контейнер */
+
 
     /* 1200px=<desktop-screen<=infinity */
     @media screen and (min-width: 1200px) {
@@ -100,18 +100,18 @@ height: auto;}
     }
     }
     
-/* ТЕЛЕФОН описали секцію */
+
 section {
     /* 280px=<phone-screen<=infinity */
-    padding: 78px 0;}
+    padding: 96px 0;}
 
-/* ПЛАНШЕТ Описали секцію*/
+
     /* 768px=<tablet-screen<=infinity */
     @media screen and (min-width: 768px) {
     section {padding: 96px 0;}
     }
 
-/* ДЕСКТОП Описали секцію */
+
     /* 1200px=<desktop-screen<=infinity */
     @media screen and (min-width: 1200px) {
     section {padding: 120px 0;
@@ -119,12 +119,12 @@ section {
     }
 
 /* -----HEADER----- */
-/* ALL Описали лінію під хедером*/
+
 header {
     border-bottom: 1px solid var(--third-text-color);
 }
 
-/* ALL Описали контейнер хедеру, додали властивість флекс*/
+
 .container.page-header {
     display: flex;
     align-items: center;
@@ -132,7 +132,7 @@ header {
 
 /* -----Logo----- */
 
-/* ALL Описали ЛОГОТИП шрифти*/
+
 
     .logo {
     padding: 24px 0;
@@ -146,29 +146,28 @@ header {
     text-transform: uppercase;
 }
 
-/* ALL Описали ЛОГОТИП - біла частина */
+
 .accent {color: var(--second-text-color);}
 
 /* -----Navigation------ */
-/* ALL описали позиціонування (блок меню + лого)  */
+
 .page-nav {
     display: flex;
     align-items: center;
     margin-right: auto;}
 
-/* ТЕЛЕФОН приховали блок меню та адрес  */
+
     @media screen and (max-width: 768px) {
     .menu {display: none;}
     }
 
-    /* .menu {display: none;}
-    .address {display: none;} */
+    
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767.98px) {
     .address {display: none;}}
 
 
-/* ПЛАНШЕТ описали блок меню, марджином відсунули від лого  */
+
      @media screen and (min-width: 768px) {
     .menu {
     display: flex;
@@ -176,7 +175,7 @@ header {
     margin-left: 120px;
     }
 }
-/* ДЕСКТОП описали блок меню, марджином відсунули від лого  */
+
      @media screen and (min-width: 1200px) {
     .menu {
     display: flex;
@@ -185,7 +184,7 @@ header {
     }
 }
 
-/* ALL описали лінки в меню, центрували паддінгами, встановили ховер та підкреслення за допомогою афтер, встановили між лінками меню марджини по 40  */
+
 .menu-link {
     display: block;
     padding-top: 24px;
@@ -220,7 +219,7 @@ background-color: var(--change-color);
 }
 
 /* -----Adress----- */
-/* ПЛАНШЕТ описали адрес лінк шрифти  */
+
     @media screen and (min-width: 768px) {
     .contact-link {
     color: var(--main-text-color);
@@ -231,7 +230,7 @@ background-color: var(--change-color);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 }
 
-/* ДЕСКТОП описали адрес лінк шрифти  */
+
     @media screen and (min-width: 1200px) {
     .contact-link {
  
@@ -247,12 +246,12 @@ background-color: var(--change-color);
 .contact-link:focus {color: var(--change-color); }
 
 
-/* ALL описали адрес позиціонування. дисплей флекс  */
+
 .page-nav-adress {
     display: flex;
     align-items: center;}
 
-/* ПЛАНШЕТ описали адрес позиціонування  */
+
     @media screen and (min-width: 768px) {
     .page-nav-adress {
     flex-direction: column;
@@ -261,23 +260,26 @@ background-color: var(--change-color);
     margin-bottom: 10px;}
 }
 
-/* ДЕСКТОП описали адрес позиціонування  */
+
     @media screen and (min-width: 1200px) {
     .page-nav-adress {
+    flex-direction: row;
     gap: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
     }
 }
 
-/* ТЕЛЕФОН Бургер-меню  */
+/* Burger-menu  */
 
-/* ТЕЛЕФОН кнопка бургер  */
+
 
  @media screen and (min-width: 768px) {
     .menu-toggle {display:none}
 
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.98px) {
   
 .menu-toggle {
   display: flex;
@@ -302,7 +304,7 @@ background-color: var(--change-color);
 
 .icon-menu-hamburger {stroke: var(--backgroundcolor);}
 
-/* ТЕЛЕФОН меню бургер КОНТЕЙНЕР */
+
 
 .menu-container {
   position: fixed;
@@ -313,7 +315,7 @@ background-color: var(--change-color);
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  /* min-height: 100%; */
+  
   padding: 80px 15px 15px 40px;
   background-color: var(--white-color);
   transition: transform 250ms ease-in-out;
@@ -325,7 +327,7 @@ background-color: var(--change-color);
   transform: translateX(0);
 }
 
- /* ТЕЛЕФОН меню бургер КНОПКА ЗАКРИТТЯ */
+ 
 .menu-container .menu-toggle {
   position: absolute;
   top: 40px;
@@ -345,14 +347,14 @@ background-color: var(--change-color);
 }
 
 
-/* ТЕЛЕФОН меню бургер МЕНЮ описали кнопки меню */
+
 
 .mobile-menu {
   margin: 0;
   padding: 0;
   
 }
-/* ТЕЛЕФОН меню бургер відступ між телефоном і меню */
+
 .mobile-menu:nth-child(2) {margin-bottom: auto;}
 
 .mobile-menu .link {
@@ -366,16 +368,16 @@ background-color: var(--change-color);
   text-decoration: none;
 }
 
-/* ТЕЛЕФОН меню бургер відступ між елементами МЕНЮ*/
+
 .mobile-menu-item:not(:last-child) {margin-bottom: 40px;}
 
 .link.studio {color:var(--logo-btn-color)}
 
-/* ТЕЛЕФОН меню бургер відступ між ТЕЛЕФОН і ПОШТА*/
+
 
 .mobile-menu-adress-item:not(:last-child) {margin-bottom: 40px;}
 
-/* ТЕЛЕФОН меню бургер  ТЕЛЕФОН*/
+
 .mobile-menu.adress .burger-phone{
     display: block;
     color: var(--logo-btn-color);
@@ -384,7 +386,7 @@ background-color: var(--change-color);
     line-height: 1.11;
 }
 
-/* ТЕЛЕФОН меню бургер  ПОШТА*/
+
 .mobile-menu.adress .burger-email{
     display: block;
     color: var(--main-text-color);
@@ -399,41 +401,107 @@ background-color: var(--change-color);
 
 .mobile-menu.social {padding-bottom: 40px;}
 
-/* ТЕЛЕФОН меню бургер  МЕСЕНДЖЕРИ*/
+
 .mobile-menu.social {display: flex;
 gap: 24px;
 align-items: center;}
 
    
-/* -----Hero----- */
+/* -----HERO----- */
 
 .hero {
-    max-width: 1440px;
+    min-width: 428px;
+    height: 432px;
+    margin: auto;
+    padding: 112px 0;
+    
+    background-color: var(--backgroundcolor);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/bgd/img-bgd-phone@1x.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx){.hero {background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/bgd/img-bgd-phone@2x.png);}}
+
+@media screen and (min-width: 481px) {
+
+    .hero {background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/bgd/img-bgd-tabl@1x.png);}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx){.hero {background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/bgd/img-bgd-tabl@2x.png);}}
+}
+
+@media screen and (min-width: 769px) {
+
+    .hero {background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/bgd/img-bgd-desk@1x.png);}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx){.hero {background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/bgd/img-bgd-desk@2x.png);}
+}}
+
+@media screen and (min-width: 768px) {
+    .hero {
+    min-width: 768px;
+    height: 436px;
+    margin: auto;
+    padding: 112px 0;
+    
+    
+}}
+
+@media screen and (min-width: 1200px) {.hero {
+    min-width: 1440px;
     height: 600px;
     margin: auto;
     padding: 188px 0;
     
-    background-color: var(--backgroundcolor);
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url(../images/people-office.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;text-align: center;}
+    }}
 
 .hero-title {
     display: inline-block;
 
-    width: 496px;
+    width: 320px;
     margin-top: 0;
-    margin-bottom: 48px;
+    margin-bottom: 72px;
 
     color: var(--white-color);
+    /* font-weight: 700; */
+
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .hero-title {
+    width: 496px;
+    margin-bottom: 40px;
 
     font-size: 56px;
     line-height: 1.07;
     letter-spacing: 0.02em;
     text-align: center;
+
+    }
+
 }
+
+@media screen and (min-width: 1200px) {
+    .hero-title {
+    width: 496px;
+    margin-bottom: 48px;}}
 
 .btn-order {
     display: flex;
@@ -497,34 +565,46 @@ align-items: center;}
     line-height: 1.5;
     letter-spacing: 0.02em;}
 
-/* -----Benefits------     */
+/* -----OUR BENEFITS------     */
 
 .description-benefits {
     display: flex;
 }
 
-/*   ТЕЛЕФОН ПЕРЕВАГИ      */
-/* @media screen and (max-width: 280px) and (min-width: 480px)  {
-    .description-benefits-icon {display:none}} */
 
 .description-benefits-icon {display:none}
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.98px) {
     .description-benefits {--indent:0px;
---items:1;}
-    .description-benefits .section-subtitle  {text-align: center;}
+--items:1;}}
+
+@media screen and (max-width: 1199.98px) {
+    .description-benefits .section-subtitle  {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    text-align: center;}
+
+    .description-benefits .section-description{
+    font-weight: 500;
+    }
 }
-@media screen and (max-width: 767px)
+@media screen and (max-width: 767.98px)
 {.description-benefits-item:not(:last-child) {margin-bottom: 72px;}}
 
-/*   ПЛАНШЕТ ПЕРЕВАГИ      */
+
 @media screen and (min-width: 768px) {
     .description-benefits-icon {display:none}
     .description-benefits {--indent:24px;
---items:2;}
+--items:2; row-gap: 72px;}
+
+    .description-benefits .section-subtitle  {
+    text-align: left;}
     
 }
-/*   ДЕСКТОП ПЕРЕВАГИ      */
+
+
 @media screen and (min-width: 1200px) {
     .description-benefits-icon {
     display: flex;
@@ -542,46 +622,100 @@ align-items: center;}
 }
     .description-benefits {--indent:24px;
 --items:4;}
-
-    .description-benefits-item {margin-bottom: 72px;}
-    
+       
 }
 
 
+/* -----WHAT ARE WE DOING------     */
 
+@media screen and (max-width: 1199.98px) {
+    .work {display:none}
 
-
-
-
-
-/* .description-benefits-item {
-    width: 264px;
-} */
-
-/* .description-benefits-item+.description-benefits-item {
-    margin-left: 24px;
-} */
-
-
-/* -----What are we doing images------     */
-.img {display: block;}
-
-.work {
-    padding-top: 0;
 }
+
+@media screen and (min-width: 768px) {
+    .description-work {--indent:24px;
+--items:3;}}
+
 
 .description-work {
-    display: flex;
-    align-items: center;
     margin-bottom: 8px;
 }
 
-.description-work-item:not(:last-child) {margin-right: 24px;}
+
+
+/* < !-- -----OUR TEAM----- --> */
+
+
+.team {background-color: var(--backgroundbtn);}
+
+
+@media screen and (max-width: 767.98px) {.team {
+padding-bottom: 128px;}}
+
+
+@media screen and (min-width: 768px) {.team {padding-top: 96px;
+padding-bottom: 104px;}}
+
+
+@media screen and (min-width: 1200px) {.team {padding-top: 120px;
+padding-bottom: 120px;}}
+
+
+@media screen and (max-width: 767.98px) {
+    .team .container {
+    min-width: 264px;
+    max-width: 264px;
+    padding-right: 0;
+    padding-left: 0;}}
+
+
+@media screen and (min-width: 768px) and (max-width: 1199.98px)  {
+    .team .container {
+    max-width: 552px;
+    padding-right: 0;
+    padding-left: 0;}}
+
+
+@media screen and (max-width: 767.98px) {
+    .team-member {--indent:0;
+--items:1; row-gap: 72px;}}
+
+
+@media screen and (min-width: 768px) {
+    .team-member {--indent:24px;
+--items:2; row-gap: 64px;}}
+
+
+@media screen and (min-width: 1200px) {
+    .team-member {--indent:24px;
+--items:4;}}
+
+
+.team-member-item > .section-subtitle {
+    margin-top: 32px;
+    text-align: center;}
+
+
+.team-member-item > .section-description {
+    margin-bottom: 8px;
+    text-align: center;}
+
+
+
+.team-member-item {
+    border-radius: 0px 0px 4px 4px;
+    background-color: var(--white-color);
+
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
 
 .social-list {
     display: flex;
     gap: 24px;
     justify-content: center;
+    margin-bottom: 32px;
     }
 
 .social-list-icon {
@@ -606,50 +740,49 @@ align-items: center;}
   background-color: var(--change-color);
 }
 
-/* < !-- -----Our team----- --> */
+/* < !-- -----CUSTOMERS----- --> */
 
-.team-member-item > .section-subtitle {
-margin-top: 32px;
+/* .customers {padding-top: 130px;} */
+
+
+@media screen and (max-width: 767.98px) {
+    .customers-list {--indent:16px;
+--items:2; row-gap: 72px;}
+    .customers-list-item{width: 190px; height: 88px;}
+    .customers-list-icon {
+    width: 110px;
+    height: 56px;}
+    .customers-list-link {padding: 16px 40px;}
 }
 
-.team-member-item {
-border-radius: 0px 0px 4px 4px;
-background-color: var(--white-color);
 
-box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+@media screen and (min-width: 768px) {
+    .customers-list {--indent:24px;
+--items:3; row-gap: 72px;}
+    .customers-list-item{width: 168px; height: 88px;}
+    .customers-list-icon {
+    width: 104px;
+    height: 56px;}
+    .customers-list-link {padding: 16px 40px;}
 }
 
-.team {background-color: var(--backgroundbtn);}
 
-.team-member {
-    display: flex;
-    flex-basis: calc((100%-72px)/3);
-    flex-wrap: wrap;
-    align-items: center;
-    column-gap: 24px;}
-
-.team-member-item {padding-bottom: 32px;}
-
-.team-member-item > .section-subtitle {text-align: center;}
-
-.team-member-item > .section-description {
-margin-bottom: 8px;
-text-align: center;}
-
-/* < !-- -----Customers----- --> */
-
-.customers {padding-top: 130px;}
-
-.customers-list {
-    display: flex;
-    gap: 24px;}
+@media screen and (min-width: 1200px) {
+    .customers-list {--indent:24px;
+--items:6; }
+    /* .customers-list-item{width: 168px; height: 88px;}
+    .customers-list-icon {
+    width: 104px;
+    height: 56px;}
+    .customers-list-link {padding: 16px 32px;} */
+}
 
 .customers-list-item {
     display: flex;
     justify-content: center;
     align-items: center;
     
-    width: 168px; height: 88px;
+    /* width: 168px; height: 88px; */
     border: 1px solid var(--icon-cust-rcolor);
     border-radius: 4px;}
 
@@ -661,7 +794,7 @@ text-align: center;}
     
     width: 100%;
     height: 100%;
-    padding: 16px 32px;
+    /* padding: 16px 32px; */
 
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
@@ -682,19 +815,90 @@ text-align: center;}
 
 
 /* -----Footer----- */
+.footer {background-color: var(--second-text-color);}
 
-.footer > .container {
-    display: flex;
-    /* padding: 100px;  */
+.accent-footer {
+    color: var(--third-text-color);
 }
 
-.footer {
+
+@media screen and (max-width: 767.98px) {
+    .footer {padding: 96px 0;}
+
+    .footer-description { margin-bottom: 72px;text-align: center;}
+
+    .section-description-footer { margin-right: auto;margin-left: auto; text-align: left;}
+
+    .footer .logo {display: block; padding: 0 0 16px 0;}
+
+    .footer-social { margin-bottom: 72px;text-align: center;}
+
+    .footer-subscribe {text-align: center;}
+
+    .footer-subscribe-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
+    .footer-subscribe-input {max-width: 396px;}
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .footer > .container {display: flex;
+flex-wrap: wrap;
+    padding-left: 108px;}  
+
+    .footer {
+padding-top: 96px;
+padding-bottom: 96px;
+
+}
+    .footer-description {
+     margin-right: 24px; }
+
+    .footer-social .social-list {margin-bottom: 0;}
+    
+    /* .footer-subscribe-form {margin-bottom: 72px;} */
+
+    .footer-subscribe-item {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+}
+.footer-subscribe {margin-top:72px;}
+
+.footer-subscribe-input {
+width: 264px; 
+}}
+
+
+
+@media screen and (min-width: 1200px) {
+
+    .footer > .container {
+    display: flex; flex-wrap: nowrap;  
+padding-left: 0px;}
+    .footer {
 padding-top: 100px;
 padding-bottom: 100px;
 
-background-color: var(--second-text-color);}
+}
+    .footer-description {margin-right: 120px;}
 
-.footer-description {margin-right: 120px;}
+    .footer-social {margin-right: 80px;}
+
+    .footer-subscribe-item {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+}
+.footer-subscribe {margin-top:0;}
+}
+
 
 .title-social {
     margin-top: 0;
@@ -713,13 +917,8 @@ background-color: var(--second-text-color);}
     margin-bottom: 0;
     
     color: var(--third-text-color);
-    
     line-height: 1.5;
     letter-spacing: 0.02em; 
-}
-
-.accent-footer {
-    color: var(--third-text-color);
 }
 
 .footer-social .social-list {gap: 16px;}
@@ -738,7 +937,7 @@ background-color: var(--second-text-color);}
   width: 24px;
   height: 24px;}
 
-.footer-social {margin-right: 80px;}
+
 
 .title-subscribe {
     margin-top: 0;
@@ -750,14 +949,9 @@ background-color: var(--second-text-color);}
     letter-spacing: 0.02em;    
 }
 
-.footer-subscribe-item {
-    display: flex;
-    gap: 24px;
-    margin-top: 16px;
-}
 
 .footer-subscribe-input {
-width: 264px;
+
 min-height: 40px;
 padding-left: 16px;
 border: 1px solid rgba(255, 255, 255, 0.3);
@@ -784,8 +978,10 @@ letter-spacing: 0.04em;
 display: flex;
 gap: 16px;
 justify-content: center;
-min-width: 165px; 
+max-width: 165px;
 height: 40px;
+margin-right: auto;
+margin-left: auto;
 padding: 8px 24px;
 border: 0;
 border-radius: 4px;
@@ -827,14 +1023,19 @@ transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-b
 position: absolute;
 top: 50%;
 left: 50%;
-width: 408px;
-height: 584px;
-padding: 72px 24px 24px;
+width: 392px;
+height: 586px;
+padding: 72px 16px 24px;
 background-color: var(--modal-color);
 
 transform: translate(-50%, -50%) scale(1);
 
 }
+@media screen and (min-width: 768px) {
+    .modal {
+    width: 408px;
+    height: 584px;
+    padding: 72px 24px 24px;}}
 
 .icon-close {
 width: 8px; 
