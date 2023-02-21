@@ -58,7 +58,8 @@ body {
 .card-set {
     display: flex;
     flex-wrap: wrap;
-    gap:var(--indent)
+    gap:var(--indent);
+    justify-content: center;
 }
 
 .card-set-item {
@@ -407,11 +408,15 @@ background-color: var(--change-color);
 gap: 24px;
 align-items: center;}
 
+.mobile-menu .social-list-icon {
+  width: 24px;
+  height: 24px;}
+
    
 /* -----HERO----- */
 
 .hero {
-    max-width: 428px;
+    /* max-width: 428px; */
     height: 432px;
     margin: auto;
     padding: 112px 0;
@@ -453,7 +458,7 @@ align-items: center;}
 
 @media screen and (min-width: 768px) {
     .hero {
-    min-width: 768px;
+    /* min-width: 768px; */
     height: 436px;
     margin: auto;
     padding: 112px 0;
@@ -670,22 +675,23 @@ padding-bottom: 104px;}}
 
 
 @media screen and (min-width: 768px) and (max-width: 1199.98px)  {
-    .team .container {
+    /* .team .container {
     max-width: 552px;
     padding-right: 0;
-    padding-left: 0;}}
+    padding-left: 0;} */
+
+}
 
 
 @media screen and (max-width: 767.98px) {
-    .team-member {--indent:0;
---items:1; row-gap: 72px;}}
+    .team-member {flex-basis: calc((100% - (var(--indent) * (var(--items) - 1))) / var(--items)); row-gap: 72px;--indent:0;
+--items:1;}}
 
 
 @media screen and (min-width: 768px) {
-    .team-member {--indent:24px;
---items:2; row-gap: 64px;
-justify-content: center;}
-.team-member-item.card-set-item {flex-basis: calc((100% - (var(--indent) * (var(--items) - 1))) / var(--items));}}
+    .team-member {
+ row-gap: 64px;column-gap:24px;}
+}
 
 
 @media screen and (min-width: 1200px) {
@@ -858,9 +864,12 @@ padding-top: 96px;
 padding-bottom: 96px;
 
 }
+
+    .footer .logo { margin-bottom: 16px;padding: 0;}
+
     .footer-description {
      margin-right: 24px;
-    margin-bottom: 72px; }
+    /* margin-bottom: 72px; } */}
 
     .footer-social .social-list {margin-bottom: 0;}
     
@@ -1033,6 +1042,15 @@ background-color: var(--modal-color);
 transform: translate(-50%, -50%) scale(1);
 
 }
+
+@media screen and (max-width: 389.98px) {
+    .modal {
+    width: 318px;
+    height: auto;
+    padding: 72px 24px 24px;}
+.modal-form-check-deskr{flex-wrap: wrap;}
+}
+
 @media screen and (min-width: 768px) {
     .modal {
     width: 408px;
